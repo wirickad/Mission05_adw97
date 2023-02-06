@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+*@
+@{
+
+}
+
+@model GradeFormModel;
+    <!--Alex Wirick
+        Mission 5
+        2/6/2023-->
+    <!--Form where a user can input their grades for each category in the class and output their final grade-->
+    <div>
+        <form method="post">
+            <label id="formTitle">Insert the percentages earned in each of the following categories:</label><br />
+            <label>Assignments:</label>
+            <input required type="number" asp-for="Assignments" id="assignments" />%<br />
+            <label>Group Projects:</label>
+            <input required type="number" asp-for="Projects" id="projects" />%<br />
+            <label>Quizzes:</label>
+            <input required type="number" asp-for="Quizzes" id="quizzes" />%<br />
+            <label>Midterm Exam</label>
+            <input required type="number" asp-for="Midterm" id="midterm" />%<br />
+            <label>Exams:</label>
+            <input required type="number" asp-for="Final" id="final" />%<br />
+            <label>Intex:</label>
+            <input required type="number" asp-for="Intex" id="intex" />%<br />
+            <input id="submitForm" type="submit" value="Calculate Grade" /><br />
+            <label>Final Grade:</label>
+            <input readonly id="finalGrade" />%
+            <label>Letter Grade:</label>
+            <input readonly id="letter" />
+
+            <div asp-validation-summary="All"></div>
+        </form>
+        <br />
+    </div>
+    
+    <script src="~/js/gradeCalculator.js"></script>
